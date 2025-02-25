@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Placement Prediction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card p-4">
+        <h2 class="text-center text-primary">Campus Placement Prediction</h2>
+        <p class="text-muted text-center">Enter your details to predict placement probability</p>
+
+        <form action="/predict" method="POST">
+            <!-- Full Name -->
+            <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-control" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <!-- CGPA -->
+            <div class="mb-3">
+                <label class="form-label">CGPA</label>
+                <input type="number" step="0.01" class="form-control" name="cgpa" placeholder="Enter CGPA" required>
+            </div>
+
+            <!-- Communication Skills -->
+            <div class="mb-3">
+                <label class="form-label">Communication Skills (1-10)</label>
+                <input type="number" min="1" max="10" class="form-control" name="comm_skills" required>
+            </div>
+
+            <!-- Discipline -->
+            <div class="mb-3">
+                <label class="form-label">Discipline</label>
+                <select class="form-select" name="discipline" required>
+                    <option value="CSE">Computer Science & Engineering</option>
+                    <option value="ME">Mechanical Engineering</option>
+                    <option value="EE">Electrical Engineering</option>
+                    <option value="ECE">Electronics & Communication</option>
+                    <option value="MCA">Master of Computer Applications</option>
+                </select>
+            </div>
+
+            <!-- Hostel Option -->
+            <div class="mb-3">
+                <label class="form-label">Do you stay in a Hostel?</label>
+                <select class="form-select" name="hostel" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <!-- Internships -->
+            <div class="mb-3">
+                <label class="form-label">Number of Internships</label>
+                <input type="number" class="form-control" name="internships" required>
+            </div>
+
+            <!-- Certifications -->
+            <div class="mb-3">
+                <label class="form-label">Number of Certifications</label>
+                <input type="number" class="form-control" name="certifications" required>
+            </div>
+
+            <!-- Projects -->
+            <div class="mb-3">
+                <label class="form-label">Number of Projects</label>
+                <input type="number" class="form-control" name="projects" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Predict Placement</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
